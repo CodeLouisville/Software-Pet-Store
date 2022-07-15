@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetStore
 {
-    internal class DogLeash
+    internal class DogLeash : Product
     {
         public int LengthInches { get; set; }
 
