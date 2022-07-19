@@ -6,6 +6,7 @@ var productLogic = new ProductLogic();
 
 Console.WriteLine("Press 1 to add a Dog Leash product");
 Console.WriteLine("Press 2 to view a Dog Leash Product");
+Console.WriteLine("Press 3 to view in stock products");
 Console.WriteLine("Type 'exit' to quit");
 
 string userInput = Console.ReadLine();
@@ -47,9 +48,20 @@ while (userInput.ToLower() != "exit")
         Console.WriteLine(JsonSerializer.Serialize(dogLeash));
         Console.WriteLine();
     }
+    if (userInput == "3")
+    {
+        Console.WriteLine("The following products are in stock: ");
+        var inStock = productLogic.GetOnlyInStockProducts();
+        foreach (var item in inStock)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+    }
 
     Console.WriteLine("Press 1 to add a product");
     Console.WriteLine("Press 2 to view a Dog Leash Product");
+    Console.WriteLine("Press 3 to view in stock products");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 }
