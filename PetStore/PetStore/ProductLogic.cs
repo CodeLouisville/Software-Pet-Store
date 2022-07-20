@@ -79,7 +79,12 @@ namespace PetStore
 
         public List<string> GetOnlyInStockProducts()
         {
-            return _products.Where(x => x.Quantity > 0).Select(x=>x.Name).ToList();
+            return _products.InStock().Select(x=>x.Name).ToList();
+        }
+
+        public decimal GetTotalPriceOfInventory()
+        {
+            return _products.InStock().Select(x => x.Price).Sum();
         }
     }
 }
