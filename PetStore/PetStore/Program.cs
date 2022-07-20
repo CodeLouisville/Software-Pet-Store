@@ -7,6 +7,7 @@ var productLogic = new ProductLogic();
 Console.WriteLine("Press 1 to add a Dog Leash product");
 Console.WriteLine("Press 2 to view a Dog Leash Product");
 Console.WriteLine("Press 3 to view in stock products");
+Console.WriteLine("Press 4 to view the total price of current inventory");
 Console.WriteLine("Type 'exit' to quit");
 
 string userInput = Console.ReadLine();
@@ -58,10 +59,16 @@ while (userInput.ToLower() != "exit")
         }
         Console.WriteLine();
     }
+    if (userInput == "4")
+    {
+        Console.WriteLine($"The total price of inventory on hand is {productLogic.GetTotalPriceOfInventory()}");
+        Console.WriteLine();
+    }
 
     Console.WriteLine("Press 1 to add a product");
     Console.WriteLine("Press 2 to view a Dog Leash Product");
     Console.WriteLine("Press 3 to view in stock products");
+    Console.WriteLine("Press 4 to view the total price of current inventory");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 }
