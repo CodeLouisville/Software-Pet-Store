@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetStore
+namespace PetStore.Models
 {
-    internal class CatFood : Product
+    internal class DryCatFood : CatFood
     {
-        public bool KittenFood { get; set; }
+        public double WeightPounds { get; set; }
 
     }
 }
